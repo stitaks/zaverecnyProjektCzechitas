@@ -6,7 +6,11 @@ header {
 }
 
 body {
-  background-image: url(../../img/obrazek06.jpg);
+  background: url(../../img/obrazek06.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .logo {
