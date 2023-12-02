@@ -1,13 +1,19 @@
 import { useState } from 'react';
+import './style.css';
 
 export const Card = (props) => {
-    const [reversed, setReversed] = useState(false)
-    
-const handleClick = () => {
+  const [reversed, setReversed] = useState(false);
+
+  const handleClick = () => {
     setReversed(true);
   };
 
-    return(
-        <img onClick={handleClick} src={reversed?  `../../img/${props.name}` : '../../img/zadnistrana.png' } alt=""></img>
-    )
-}
+  return (
+    <img
+      className="cardImg"
+      onClick={handleClick}
+      src={reversed ? `../../img/${props.name}` : '../../img/zadnistrana.png'}
+      alt=""
+    ></img>
+  );
+};
