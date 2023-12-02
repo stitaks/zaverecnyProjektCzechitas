@@ -1,7 +1,23 @@
 import { createRoot } from 'react-dom/client';
 import { HomePage } from './pages/HomePage';
 import './global.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { fairytails } from './Constants';
 
-createRoot(
-  document.querySelector('#app'),
-).render(<HomePage />);
+const routes = [
+  {
+    path: '/',
+    element: <HomePage />,
+  },
+]
+Object.keys(fairytails).map(
+  (nameTails => routes.push({
+    path: `/${nameTails}`,
+    element: <Game />
+  }))
+)
+const router = createBrowserRouter(routes);
+
+createRoot(document.querySelector('#app')).render(
+  <RouterProvider router={router} />
+);
