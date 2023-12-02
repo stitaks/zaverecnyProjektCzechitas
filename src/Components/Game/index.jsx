@@ -1,15 +1,21 @@
 import './style.css'
 import { Card } from "../Card"
 import { fairytails } from "../../Constants/index"
+import { useEffect, useState } from 'react'
 
-export const Game = (props) => {
+export const Game = ({game}) => {
     const doubleFairytails = [
-        ...props.game.cards,
-        ...props.game.cards,
+        ...game.cards,
+        ...game.cards,
     ]
-    
+
     const shuffleGame = doubleFairytails => doubleFairytails.sort(() => .5 - Math.random());
     shuffleGame(doubleFairytails);
+    
+    const [gameInState, setGameInState] = useState(game)
+    useEffect(() => {
+        console.log("JUPÍ")
+    }, [gameInState])
 
     return (
         <div className="game">
