@@ -1,5 +1,6 @@
 .cardImg {
   margin: 5px;
   border-radius: 10px;
-
+  width: calc(100% -30px);
+  height: calc(100% -30px);
 }
