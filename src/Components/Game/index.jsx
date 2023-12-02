@@ -1,5 +1,10 @@
-export const Game =() => {
+
+import { Card } from "../Card"
+
+export const Game = (props) => {
     return (
-        <p>Ahoj</p>
+        props.game.images.map((image) => (
+            <Card key={props.name} name={image}/>
+        ))
     )
 }

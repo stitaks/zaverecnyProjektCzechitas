@@ -14,7 +14,7 @@ const routes = [
 Object.keys(fairytails).map(
   (nameTails => routes.push({
     path: `/${nameTails}`,
-    element: <Game />
+    element: <Game key={nameTails} nameTails={nameTails} game={fairytails[nameTails]}/>
   }))
 )
 const router = createBrowserRouter(routes);
