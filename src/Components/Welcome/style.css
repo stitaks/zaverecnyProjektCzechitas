@@ -1,10 +1,20 @@
-.welcomeWindows {
-    text-align: center;
-    background-color: blanchedalmond;
+.wraperWelcomeWindows {
     border: 1px solid black;
+
     width: 500px;
     height: 250px;
     position: absolute;
     left: 35%;
     top: 35%;
+    border-radius: 30px;
+    text-align: center;
+    background-color: blanchedalmond;
+}
+
+.welcomeWindows {
+
+    background-color: none;
+    border: 3px dashed black;
+    width: 400px;
+    height: 230px;
 }
