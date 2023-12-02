@@ -1,6 +1,8 @@
-.wraperWelcomeWindows {
+.welcomeWindowWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
-
     width: 500px;
     height: 250px;
     position: absolute;
@@ -11,10 +13,10 @@
     background-color: blanchedalmond;
 }
 
-.welcomeWindows {
-
-    background-color: none;
+.welcomeWindow {
     border: 3px dashed black;
-    width: 400px;
-    height: 230px;
+    padding: 5px;
+    width: 90%;
+    height: 80%;
+    border-radius: 30px;
 }
