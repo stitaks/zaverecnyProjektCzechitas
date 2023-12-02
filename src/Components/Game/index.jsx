@@ -3,14 +3,16 @@ import { Card } from "../Card"
 import { fairytails } from "../../Constants/index"
 import { useEffect, useState } from 'react'
 
-export const Game = ({game}) => {
-    
+export const Game = (props) => {
+    const [game, setGame] = useState(props.game);
     const [openCards, setOpenCards] = useState([]);
 
     useEffect(() => {
-        if(openCards.length === 1){
-            if(openCards[0] !== openCards[1]){
-                console.log(openCards)
+        if(openCards.length === 2){
+            if(openCards[0].image !== openCards[1].image){
+                openCards[0].reverse = false;
+                openCards[1].reverse = false;
+                setOpenCards([]);
             }
         }
     }, [openCards])
