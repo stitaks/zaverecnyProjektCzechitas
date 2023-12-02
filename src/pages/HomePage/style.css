@@ -5,6 +5,10 @@ header {
   margin-top: 4rem;
 }
 
+body {
+  background-image: url(../../img/obrazek06.jpg);
+}
+
 .logo {
   width: 10rem;
   height: 10rem;
