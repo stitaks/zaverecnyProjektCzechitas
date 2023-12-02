@@ -1,18 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './style.css';
 
-export const Card = (props) => {
-  const [reversed, setReversed] = useState(false);
+export const Card = ({card}) => {
+    const [isReverse, setIsReverse] = useState(card.reverse)
+    const [showAnimation, setShowAnimation] = useState(false);
+
+    useEffect(() => {
+        card.reverse = true;
+    }, [isReverse])
 
   const handleClick = () => {
-    setReversed(true);
+    setShowAnimation(true)
+    setTimeout(() => {
+        setIsReverse(true);
+        setTimeout(()=>{
+            setShowAnimation(false)
+        }, 500)
+    }, 500)
+    
   };
 
   return (
     <img
-      className="cardImg"
+    className={`cardImg${showAnimation ? ' animate' : ''}`}
       onClick={handleClick}
-      src={reversed ? `../../img/${props.name}` : '../../img/zadnistrana.png'}
+      src={isReverse ? `../../img/${card.image}` : '../../img/zadnistrana.png'}
       alt=""
     ></img>
   );
