@@ -3,7 +3,7 @@ import { useState } from "react"
 
 
 export const Card = (props) => {
-    const [reversed, setReversed] = useState('false')
+    const [reversed, setReversed] = useState(false)
     
 const handleClick = () => {
     console.log('klik')
@@ -11,6 +11,6 @@ const handleClick = () => {
   };
 
     return(
-        <img onClick={handleClick} src={reversed? '../../img/zadnistrana.png' : `../../img/${props.name}`} alt=""></img>
+        <img onClick={handleClick} src={reversed?  `../../img/${props.name}` : '../../img/zadnistrana.png' } alt=""></img>
     )
 }
