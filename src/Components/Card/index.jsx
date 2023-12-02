@@ -1,6 +1,4 @@
-import { useState } from "react"
-
-
+import { useState } from 'react';
 
 export const Card = (props) => {
     const [reversed, setReversed] = useState(false)

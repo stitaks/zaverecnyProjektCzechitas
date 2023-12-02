@@ -1,3 +1,7 @@
-.game{
-    background-color: blanchedalmond;
+.game {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+
 }

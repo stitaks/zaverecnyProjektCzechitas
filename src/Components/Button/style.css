@@ -1,11 +1,12 @@
 .butt {
   display: inline-block;
   padding: 10px 20px;
-  background-color: peachpuff;
+  background-image: linear-gradient(45deg, red, yellow);
   text-decoration: none;
   color: rgb(192, 7, 7);
-  border: 2px solid #e97e6b;
-  border-radius: 30px;
+  border: 1px solid rgb(131, 129, 129);
+  border-radius: 20px;
   text-align: center;
-  font-family: 'Open Sans', cursive;
+  font-family: 'Pacifico', cursive;
+  margin: 5px;
 }
