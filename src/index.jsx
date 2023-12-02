@@ -3,6 +3,7 @@ import { HomePage } from './pages/HomePage';
 import './global.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { fairytails } from './Constants';
+import { Game } from './Components/Game';
 
 const routes = [
   {
