@@ -1,0 +1,11 @@
+.butt {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: peachpuff;
+  text-decoration: none;
+  color: rgb(192, 7, 7);
+  border: 2px solid #e97e6b;
+  border-radius: 30px;
+  text-align: center;
+  font-family: 'Open Sans', cursive;
+}
