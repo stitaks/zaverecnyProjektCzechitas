@@ -10,9 +10,7 @@ export const Game = ({game}) => {
     useEffect(() => {
         if(openCards.length === 1){
             if(openCards[0] !== openCards[1]){
-                openCards[0].reverse = false;
-                openCards[1].reverse = false;
-                setOpenCards = [];
+                console.log(openCards)
             }
         }
     }, [openCards])
