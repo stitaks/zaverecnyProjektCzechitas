@@ -7,6 +7,7 @@ export const Game = (props) => {
         ...props.game.cards,
         ...props.game.cards,
     ]
+    
     const shuffleGame = doubleFairytails => doubleFairytails.sort(() => .5 - Math.random());
     shuffleGame(doubleFairytails);
 
