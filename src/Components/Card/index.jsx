@@ -4,7 +4,6 @@ export const Card = (props) => {
     const [reversed, setReversed] = useState(false)
     
 const handleClick = () => {
-    console.log('klik')
     setReversed(true);
   };
 

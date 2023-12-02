@@ -16,8 +16,8 @@ export const Game = (props) => {
 
     return (
         <div className="game">
-            {doubleFairytails.map((image) => (
-                <Card key={image} name={image}/>
+            {doubleFairytails.map((image, index) => (
+                <Card key={`${image}_${index}`} name={image}/>
             ))}
         </div>
     )
