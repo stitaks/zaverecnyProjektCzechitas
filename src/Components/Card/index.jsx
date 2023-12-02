@@ -19,7 +19,7 @@ export const Card = (props) => {
   return (
     <img
       className={`cardImg${showAnimation ? ' animate' : ''}${
-        isReverse ? ' back' : ' front'
+        card.reverse ? ' back' : ' front'
       }`}
       onClick={handleClick}
       src={
