@@ -14,3 +14,10 @@
     background-color: blanchedalmond;
     border-radius: 30px;
 }
+
+.textConteiner{
+    margin: 5vh;
+    padding: 5vh;
+    max-height: 100%;
+    overflow-y: auto;
+}

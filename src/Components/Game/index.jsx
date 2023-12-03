@@ -19,62 +19,69 @@ const randomizeCards = (cards) => {
 export const Game = (props) => {
     const [cards, setCards] = useState(randomizeCards(props.game.cards));
     const [openCards, setOpenCards] = useState([]);
-    const [isFinished, setIsFinished] = useState(true)
+    const [isFinished, setIsFinished] = useState(false)
+    const [showText, setShowText] = useState(false)
 
     const isActiveRef = useRef(true)
+    const fireWorksRef = useRef(null)
 
     useEffect(() => {
         setOpenCards([])
         setCards(randomizeCards(props.game.cards))
+        setIsFinished(false)
+        setShowText(false)
     }, [props.game])
 
-  useEffect(() => {
-    if (openCards.length === 2) {
-      isActiveRef.current = false;
+    useEffect(() => {
+        if(!isFinished){
+            return;
+        }
 
-      if (openCards[0].image !== openCards[1].image) {
+        fireWorksRef.current?.start();
+
         setTimeout(() => {
-          setCards((previousCard) => {
-            return previousCard.map((card) => {
-              if (card.id === openCards[0].id) {
-                return {
-                  ...card,
-                  reverse: false,
-                };
-              }
-              if (card.id === openCards[1].id) {
-                return {
-                  ...card,
-                  reverse: false,
-                };
-              }
+            fireWorksRef.current?.stop();
+            
+            setShowText(true)
+        }, 5000)
+    })
+
+    useEffect(() => {
+        if (openCards.length === 2) {
+            isActiveRef.current = false;
+
+            if (openCards[0].image !== openCards[1].image) {
+                setTimeout(() => {
+                    setCards((previousCard) => {
+                        return previousCard.map((card) => {
+                            if (card.id === openCards[0].id) {
+                                return {
+                                    ...card,
+                                    reverse: false,
+                                };
+                            }
+                            if (card.id === openCards[1].id) {
+                                return {
+                                    ...card,
+                                    reverse: false,
+                                };
+                            }
 
                             return card;
                         })
                     })
                     isActiveRef.current = true;
-                }, 2000)
+                }, 1000)
             }
             else {
                 isActiveRef.current = true;
                 if (cards.every((card) => card.reverse)) {
-                    setIsFinished(true)
+                    setTimeout(() => {setIsFinished(true)}, 1000)
                 }
             }
             setOpenCards([]);
         }
     }, [openCards])
-
-    const ref = useRef(null)
-
-    const toggle = () => {
-        if (!ref.current) return
-        if (ref.current.isRunning) {
-            ref.current.stop()
-        } else {
-            ref.current.start()
-        }
-    }
 
 
     return (
@@ -99,7 +106,7 @@ export const Game = (props) => {
                                 return newCard;
                             });
 
-                        console.log(newCards)
+                            console.log(newCards)
 
                             if (!card.reverse) {
                                 setOpenCards([...openCards, card])
@@ -108,18 +115,25 @@ export const Game = (props) => {
                             setCards(newCards)
                         }}
                         setOpenCards={setOpenCards} />
-                ))) : (<Fireworks
-                    ref={ref}
+                ))) : (
+                <>
+                {!showText && (<Fireworks
+                    ref={fireWorksRef}
                     options={{ opacity: 0.5 }}
                     style={{
-                      top: '100px',
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      position: 'fixed',
+                        top: '100px',
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        position: 'fixed',
                     }}
-                  />
-            )}
+                />)}
+                {showText && 
+                <>
+                
+                <div className='textConteiner'><h1>{props.game.name}</h1>{props.game.fairytale}</div>
+                </>}
+                </>)}
             </div>
         </>
     )
