@@ -18,6 +18,7 @@ export const Game = (props) => {
     }, [openCards])
 
     return (
+        <div className='back'>Back</div>
         <div className="game">
             {game.cards.map((card, index) => (
                 <Card 

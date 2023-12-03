@@ -1,4 +1,5 @@
 .cardImg {
+  border: 2px solid rgb(131, 129, 129);
   margin: 10px;
   border-radius: 10px;
   width: calc(100vh/5);

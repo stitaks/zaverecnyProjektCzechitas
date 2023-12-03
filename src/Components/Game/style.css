@@ -1,12 +1,18 @@
 .game {
     display: flex;
     justify-content: center;
-    margin: auto;
+    /* margin: 10%; */
+    position: absolute;
+    left: 25%;
+    top: 15%;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
+    width: 95vh;
+    height: 73vh;
 
-    width: 100vh;
-    height: 100vh;
-
+    background-color: blanchedalmond;
+    border-radius: 30px;
 }
+
+.back {}
