@@ -1,6 +1,8 @@
+import './style.css';
+import { Card } from '../Card';
+import { useEffect, useRef, useState } from 'react';
+import { Button } from '../Button';
 import './style.css'
-import { Card } from "../Card"
-import { useEffect, useRef, useState } from 'react'
 import { Fireworks } from '@fireworks-js/react'
 
 
@@ -26,26 +28,26 @@ export const Game = (props) => {
         setCards(randomizeCards(props.game.cards))
     }, [props.game])
 
-    useEffect(() => {
-        if (openCards.length === 2) {
-            isActiveRef.current = false;
+  useEffect(() => {
+    if (openCards.length === 2) {
+      isActiveRef.current = false;
 
-            if (openCards[0].image !== openCards[1].image) {
-                setTimeout(() => {
-                    setCards((previousCard) => {
-                        return previousCard.map((card) => {
-                            if (card.id === openCards[0].id) {
-                                return {
-                                    ...card,
-                                    reverse: false,
-                                };
-                            }
-                            if (card.id === openCards[1].id) {
-                                return {
-                                    ...card,
-                                    reverse: false,
-                                };
-                            }
+      if (openCards[0].image !== openCards[1].image) {
+        setTimeout(() => {
+          setCards((previousCard) => {
+            return previousCard.map((card) => {
+              if (card.id === openCards[0].id) {
+                return {
+                  ...card,
+                  reverse: false,
+                };
+              }
+              if (card.id === openCards[1].id) {
+                return {
+                  ...card,
+                  reverse: false,
+                };
+              }
 
                             return card;
                         })
@@ -77,7 +79,7 @@ export const Game = (props) => {
 
     return (
         <>
-            <div className='back'>Back</div>
+            <Button nameTails="" name="Zpět" />
             <div className="game">
                 {!isFinished ? (cards.map((card, index) => (
                     <Card
@@ -96,6 +98,8 @@ export const Game = (props) => {
                                 }
                                 return newCard;
                             });
+
+                        console.log(newCards)
 
                             if (!card.reverse) {
                                 setOpenCards([...openCards, card])
