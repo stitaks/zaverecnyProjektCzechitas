@@ -6,21 +6,19 @@ export const Card = (props) => {
   const [showAnimation, setShowAnimation] = useState(false);
 
   const handleClick = () => {
-    setShowAnimation(true);
-    setTimeout(() => {
-      setCard({ ...card, reverse: true });
-      props.setOpenCards([...props.openCards, ...[card]]);
-      setTimeout(() => {
-        setShowAnimation(false);
-      }, 500);
-    }, 500);
+    props.onClick();
+    
+    // setShowAnimation(true);
+    // setTimeout(() => {
+    //   setTimeout(() => {
+    //     setShowAnimation(false);
+    //   }, 500);
+    // }, 500);
   };
 
   return (
     <img
-      className={`cardImg${showAnimation ? ' animate' : ''}${
-        card.reverse ? ' back' : ' front'
-      }`}
+      className={'cardImg'}
       onClick={handleClick}
       src={
         card.reverse ? `../../img/${card.image}` : '../../img/zadnistrana.png'
