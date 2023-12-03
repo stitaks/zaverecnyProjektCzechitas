@@ -50,6 +50,7 @@ export const Game = (props) => {
 
 
     return (
+        <>
         <div className='back'>Back</div>
         <div className="game">
             {cards.map((card, index) => (
@@ -81,5 +82,6 @@ export const Game = (props) => {
                     setOpenCards={setOpenCards} />
             ))}
         </div>
+        </>
     )
 }
