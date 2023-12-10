@@ -2,15 +2,11 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    /* position: absolute;
-    left: 25%;
-    top: 15%; */
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
-    width: 95vh;
-    height: 73vh;
-
+    max-width: 95vh;
+    min-height: 73vh;
     background-color: blanchedalmond;
     border-radius: 30px;
 }
