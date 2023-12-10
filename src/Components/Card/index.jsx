@@ -7,13 +7,6 @@ export const Card = (props) => {
 
   const handleClick = () => {
     props.onClick();
-    
-    // setShowAnimation(true);
-    // setTimeout(() => {
-    //   setTimeout(() => {
-    //     setShowAnimation(false);
-    //   }, 500);
-    // }, 500);
   };
 
   return (
@@ -21,7 +14,7 @@ export const Card = (props) => {
       className={'cardImg'}
       onClick={handleClick}
       src={
-        card.reverse ? `../../img/${card.image}` : '../../img/zadnistrana.png'
+        card.reverse ? `/img/${card.image}` : '/img/zadnistrana.png'
       }
       alt=""
     ></img>

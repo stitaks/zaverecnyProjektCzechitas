@@ -7,7 +7,7 @@ export const Welcome = () => {
     <div className="welcomeWindowWrapper">
       <div className="welcomeWindow">
         <h1>Pohádkové pexeso</h1>
-        <p>Vítejte v naší hře </p>
+        <p>Vítejte, pojďte si zahrát naše pexeso. Když se vám podaří vyhrát, za odměnu dostanete pohádku. </p>
         {Object.keys(fairytails).map((nameTails) => (
           <Button
             key={nameTails}

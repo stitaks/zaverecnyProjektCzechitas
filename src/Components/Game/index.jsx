@@ -117,7 +117,10 @@ export const Game = (props) => {
                         setOpenCards={setOpenCards} />
                 ))) : (
                 <>
-                {!showText && (<Fireworks
+                {!showText && (
+                <>
+                <div>Gratulujeme!!!</div>
+                <Fireworks
                     ref={fireWorksRef}
                     options={{ opacity: 0.5 }}
                     style={{
@@ -127,7 +130,8 @@ export const Game = (props) => {
                         height: '100%',
                         position: 'fixed',
                     }}
-                />)}
+                />
+                </>)}
                 {showText && 
                 <>
                 
